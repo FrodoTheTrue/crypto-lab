@@ -1,0 +1,19 @@
+machine:
+  timezone:
+    Asia/Yekaterinburg
+  python:
+    version: 3.6.1
+  node:
+    version: 8.1.0
+
+dependencies:
+  override:
+    - pip install -r requirements.txt
+
+test:
+  override:
+    - npm run lint
+    - npm run tests
+  post:
+    - npm run coverage
+    - codecov

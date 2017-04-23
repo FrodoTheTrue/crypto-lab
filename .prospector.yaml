@@ -1,0 +1,13 @@
+strictness: medium
+test-warnings: true
+doc-warnings: false
+member-warnings: true
+
+ignore-paths:
+  - venv
+  - experiments
+
+pep8:
+  full: true
+  options:
+    max-line-length: 130

@@ -1,0 +1,12 @@
+[run]
+branch = True
+omit =
+    *__init__*
+    *tests*
+
+[report]
+exclude_lines =
+    if __name__ == .__main__.:
+
+[html]
+directory = coverage-html-report

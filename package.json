@@ -1,0 +1,27 @@
+{
+  "name": "Optimus-Prime",
+  "version": "1.0.0",
+  "description": "Lib for storing and accessing prime numbers",
+  "scripts": {
+    "deploy-blocks": "surge experiments/blocks-divided/",
+    "lint": "prospector",
+    "tests": "python -m unittest",
+    "coverage": "coverage run -m unittest",
+    "coverage-report": "coverage report",
+    "coverage-html": "coverage html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FrodoTheTrue/crypto-lab.git"
+  },
+  "keywords": [
+    "cryptography",
+    "prime numbers"
+  ],
+  "author": "Savi|MDF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FrodoTheTrue/crypto-lab/issues"
+  },
+  "homepage": "https://github.com/FrodoTheTrue/crypto-lab#readme"
+}

@@ -1,0 +1,13 @@
+.DS_Store
+
+.idea/
+
+venv/
+*.pyc
+
+experiments/
+
+modules/tests/fixtures/tmp/
+
+.coverage
+coverage-html-report/
