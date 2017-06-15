@@ -5,11 +5,13 @@ from functools import reduce
 
 import requests
 
-from modules.tools import time_it
+# from modules.tools import time_it
 
 
-@time_it
+# @time_it
 def search(n, amount_blocks, block_size, cdn, path_files_blocks=None):
+    block_size -= 1  # В блоке на одно число меньше
+
     total_numbers = amount_blocks * block_size
 
     if n > total_numbers:

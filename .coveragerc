@@ -3,10 +3,13 @@ branch = True
 omit =
     *__init__*
     *tests*
+    *venv*
 
 [report]
 exclude_lines =
     if __name__ == .__main__.:
+    def generate_files_blocks
+    def get_prime
 
 [html]
 directory = coverage-html-report

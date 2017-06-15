@@ -1,19 +1,23 @@
 import os
-import unittest
+import shutil
+from unittest import TestCase, main as unit_tests
 
 from modules.blocks import generate_blocks, split
 
 BASE_DIR = os.path.dirname(__file__)
+TMP_DIR = os.path.join(BASE_DIR, 'fixtures/tmp')
 
 
-class TestBlocks(unittest.TestCase):
-    def setUp(self):
-        self.primes_file = os.path.join(BASE_DIR, 'fixtures/100_primes.txt')
-        self.primes_in_line = 10
-        self.blocks_file = os.path.join(BASE_DIR, 'fixtures/tmp/blocks.txt')
-        self.block_size = 10
-        self.blocks_in_file = 1
-        self.split_blocks_path = os.path.join(BASE_DIR, 'fixtures/tmp/split')
+class TestBlocks(TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.primes_file = os.path.join(BASE_DIR, 'fixtures/100_primes.txt')
+        cls.primes_in_line = 10
+        cls.blocks_file = '{}/blocks.txt'.format(TMP_DIR)
+        cls.block_size = 10
+        cls.blocks_in_file = 1
+        cls.split_blocks_path = os.path.join(BASE_DIR, TMP_DIR, 'split')
 
     def test_generator(self):
         generate_blocks(self.primes_file, self.blocks_file, self.block_size, self.primes_in_line)
@@ -49,6 +53,10 @@ class TestBlocks(unittest.TestCase):
 
         self.assertEqual(len(os.listdir(self.split_blocks_path)), 11)
 
+    @classmethod
+    def tearDownClass(cls):
+        shutil.rmtree(TMP_DIR)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    unit_tests()
