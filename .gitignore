@@ -11,3 +11,5 @@ modules/tests/fixtures/tmp/
 
 .coverage
 coverage-html-report/
+
+prime-cache.sqlite

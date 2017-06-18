@@ -4,6 +4,7 @@ import gzip
 from functools import reduce
 
 import requests
+import requests_cache
 
 # from modules.tools import time_it
 
@@ -24,6 +25,7 @@ def search(n, amount_blocks, block_size, cdn, path_files_blocks=None):
         with gzip.open('{}/{}.txt.gz'.format(path_files_blocks, block_num), 'rt') as f_block:
             numbers = [float(num) for num in f_block.readline().strip().split(' ')]
     else:
+        requests_cache.install_cache('prime-cache')
         response = requests.get('{}/{}.txt.gz'.format(cdn, block_num))
 
         if not response.status_code == 200:
