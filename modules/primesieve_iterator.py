@@ -8,7 +8,7 @@ def generate_primes(n, file_name):
         it = Iterator()
         prime = it.next_prime()
 
-        while prime < n:
+        while prime <= n:
             if counter < 10:
                 f.write('{} '.format(prime))
                 counter += 1
